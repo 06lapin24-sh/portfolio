@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+/* リセット */
+html,
+body,
+header,
+footer,
+main,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+dl,
+dt,
+dd,
+div {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  /* color: #4f260b; */
+  box-sizing: border-box;
+}
+
+a {
+  /*下線を消す*/
+  text-decoration: none;
+  /*色を消す*/
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul,
+ol {
+  /*左の「・」を消す*/
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+  border: none;
+}
+
+button {
+  /* リセット部分 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  line-height: normal;
+  cursor: pointer;
+  outline: none;
+
+  /* Safari/Firefoxで残る内側の余白・枠線対策 */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}

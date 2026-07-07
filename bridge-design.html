@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRIDGE design | portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+        <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <h1 class="logo">
+        <a href="./index.html"
+          ><img src="./images/logo.svg" alt="BRIDGE design"
+        /></a>
+      </h1>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamberger">
+        <span></span>
+      </div>
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="#menu-item-website">#website</li></a>
+          <li><a href="#menu-item-banner">#banner</li></a>
+          <li><a href="#menu-item-logo">#logo</li></a>
+          <li><a href="#menu-item-others">#others</li></a>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2 class="works__heading">Works</h2>
+      <div class="works__slider02">
+        <img
+          src="./images/mockup_pc_bridge-design.jpg"
+          alt="BRIDGE design PC版"
+        />
+        <img
+          src="./images/mockup_sp_bridge-design.jpg"
+          alt="BRIDGE design スマホ版"
+        />
+      </div>
+      <div class="works__wrapper">
+      <h3 class="works__h3">ポートフォリオサイト（当サイト）</h3>
+      <div class="works__list">
+        <dl class="works__item">
+          <dt>課題</dt>
+          <dd>
+            作品をまとめて閲覧できるポートフォリオがない。<br>
+            応募書類だけでは、自分の人柄や考え方を十分に伝えられない。
+          </dd>
+        </dl>
+        <dl class="works__item">
+          <dt>目的</dt>
+          <dd>
+            採用担当者の方に作品やスキル、人柄を分かりやすく伝え、自分への理解を深めていただくことで、書類通過につながるポートフォリオを制作する。
+          </dd>
+        </dl>
+        <dl class="works__item">
+          <dt>制作意図</dt>
+          <dd>
+            必要な情報を短時間で把握できるよう、情報の優先順位や視線の流れを意識して設計しました。また、作品・自己紹介・大切にしていることなどを整理して配置し、自分らしさが自然に伝わる構成を目指しました。
+          </dd>
+        </dl>
+        <dl class="works__item">
+          <dt>制作範囲</dt>
+          <dd>デザイン・コーディング・ライティング</dd>
+        </dl>
+        <dl class="works__item">
+          <dt>制作期間</dt>
+          <dd>2ヶ月（WF：10日間 / デザイン：20日間 / コーディング：1ヶ月）</dd>
+        </dl>
+        <dl class="works__item">
+          <dt>使用ツール</dt>
+          <dd>Illustrator / Figma / Visual Studio Code / GitHub</dd>
+        </dl>
+      </div>
+      </div>
+        <button class="btn__secondary">
+          <img class="icon-blue" src="./images/back_blue.svg" alt="" />
+          <img class="icon-white" src="./images/back_white.svg" alt="" />
+          <a href="./works.html">一覧へもどる</a>
+        </button>
+    </main>
+
+    <footer>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="copy">©︎ BRIDGE design</p>
+    </footer>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <!-- slickのJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script>
+      $(function(){
+        $(".works__slider02").slick({
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          dots: true
+        });
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRIDGE design | portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <h1 class="logo">
+        <a href="./index.html"
+          ><img src="./images/logo.svg" alt="BRIDGE design"
+        /></a>
+      </h1>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamberger">
+        <span></span>
+      </div>
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2 class="works__heading">Works</h2>
+      <div class="works__slider02">
+        <img
+          src="./images/mockup_pc_hair-salon.jpg"
+          alt="LIFE hair design PC版"
+        />
+        <img
+          src="./images/mockup_sp_hair-salon.jpg"
+          alt="LIFE hair design スマホ版"
+        />
+      </div>
+      <div class="works__wrapper">
+        <h3 class="works__h3">美容室のLP（架空案件）</h3>
+        <div class="works__list">
+          <dl class="works__item">
+            <dt>概要</dt>
+            <dd>10周年を機会にWebサイトをリニューアル</dd>
+          </dl>
+          <dl class="works__item">
+            <dt>目的</dt>
+            <dd>認知向上・予約獲得・SNSフォロワーUP</dd>
+          </dl>
+          <dl class="works__item">
+            <dt>制作意図</dt>
+            <dd>
+              ファミリールームを備えた美容室を想定し、家庭を持つ女性をターゲットにLPを制作しました。料金はカード型で整理し、写真とテキストを交互に配置することで視線の流れを意識しています。配色はコーポレートカラーのピンクをアクセントに、グレーと白を組み合わせて親しみやすく上品な印象に。タイポグラフィはロゴの印象に合わせ、数字を別フォントで強調することで情報の伝わりやすさを高めました。
+            </dd>
+          </dl>
+          <dl class="works__item">
+            <dt>制作範囲</dt>
+            <dd>デザイン</dd>
+          </dl>
+          <dl class="works__item">
+            <dt>制作期間</dt>
+            <dd>2週間</dd>
+          </dl>
+          <dl class="works__item">
+            <dt>使用ツール</dt>
+            <dd>Figma / Adobe Firefly</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="works__scroll">
+        <p>Scroll</p>
+        <img src="./images/icon_scroll.svg" alt="" />
+      </div>
+      <div class="scroll__img">
+        <div class="scroll__pc-wrap">
+          <img
+            class="scroll__pc"
+            src="./images/pc_hair-salon.jpg"
+            alt="パソコン版デザイン"
+          />
+        </div>
+        <div class="scroll__sp-wrap">
+          <img
+            class="scroll__sp"
+            src="./images/sp_hair-salon.jpg"
+            alt="スマホ版デザイン"
+          />
+        </div>
+      </div>
+      <button class="btn__secondary">
+        <img class="icon-blue" src="./images/back_blue.svg" alt="" />
+        <img class="icon-white" src="./images/back_white.svg" alt="" />
+        <a href="./works.html">一覧へもどる</a>
+      </button>
+    </main>
+
+    <footer>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="copy">©︎ BRIDGE design</p>
+    </footer>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <!-- slickのJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script>
+      $(function(){
+        $(".works__slider02").slick({
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          dots: true
+        });
+        })
+    </script>
+  </body>
+</html>

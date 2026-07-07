@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRIDGE design | portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- slickのCSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="text-loader">Hello</div>
+    <!-- loading -->
+    <header id="header">
+      <h1 class="logo">
+        <a href="./index.html"
+          ><img src="./images/logo.svg" alt="BRIDGE design"
+        /></a>
+      </h1>
+      <nav class="header__nav">
+        <ul>
+          <li class="link"><a href="./index.html">Home</a></li>
+          <li class="link"><a href="#about">About</a></li>
+          <li class="link"><a href="#works">Works</a></li>
+          <li class="link"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamberger">
+        <span></span>
+      </div>
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="#index.html">Home</a></li>
+          <li><a href="#about"></a>About</li>
+          <li><a href="#works"></a>Works</li>
+          <li><a href="#contact"></a>Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ここまでheader -->
+
+    <main>
+      <div class="mv-wrap">
+        <div class="lead">
+          <p class="lead__text">
+            その人の魅力、その背景にある想い。<br />
+            伝えたい想いを、届けたい人へ。<br />
+            人と人の間に、橋をかけるようなデザインを。
+          </p>
+        </div>
+        <div class="main-visual">
+          <picture>
+            <source srcset="./images/mv_sp.jpg" media="(max-width: 768px)" />
+            <img src="./images/mv_pc.jpg" alt="橋を渡る女性の後ろ姿" />
+          </picture>
+          <p class="mv__catch-copy">デザインの橋をかける</p>
+          <div class="lead">
+            <p class="lead__text">
+              その人の魅力、その背景にある想い。<br />
+              伝えたい想いを、届けたい人へ。<br />
+              人と人の間に、橋をかけるようなデザインを。
+            </p>
+          </div>
+        </div>
+
+        <div class="scroll">
+          <span class="scroll__text">Scroll</span>
+          <span class="scroll__line"></span>
+        </div>
+      </div>
+      <!-- ここまでmv -->
+
+      <section id="about">
+        <div class="about__content">
+          <h2 class="about__h2">About</h2>
+          <div class="about__box01">
+            <div>
+              <p class="h3__sub">Hisadome Shiho</p>
+              <h3 class="h3__name">久留 志保</h3>
+              <p class="about__text01">
+                1987年生まれ、鹿児島県在住。<br />子育てをしながら、Webデザインを学んでいます。<br />転職、結婚、出産、再就職と環境の変化を経験する中で、<br />働き方の選択肢を広げたいと思うようになりました。
+              </p>
+              <button class="about__btn">
+                <div class="about__btn-inner">
+                  <a class="about__btn-text" href="./about.html">詳しくみる</a>
+                  <img src="./images/arrow_about.svg" alt="" />
+                </div>
+              </button>
+            </div>
+            <img
+              class="about__img01"
+              src="./images/about01.jpg"
+              alt="ノートパソコンに向かって微笑む女性デザイナー"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- ここまでabout -->
+
+      <section id="works">
+        <h2 class="works__h2">Works</h2>
+        <div class="works__slider01">
+          <button class="btn__arrow works__prev">
+            <img class="works__arrow" src="./images/circle-left.svg" alt="" />
+            <img class="hover__arrow" src="./images/hover_left.svg" alt="" />
+          </button>
+          <ul class="works__list-slick">
+            <li>
+              <a href="./bridge-design.html">
+                <img
+                  src="./images/mockup_pc_bridge-design.jpg"
+                  alt="BRIDGE design コーポレートサイト"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./hamberger-premium.html">
+                <img
+                  src="./images/mockup_banner_hamberger-premium.jpg"
+                  alt="デラックスバーガー プレミアム系バナー"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./icecream.html">
+                <img
+                  src="./images/mockup_banner_icecream.jpg"
+                  alt="夏季限定アイスクリーム バナー"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./life-hair-design.html">
+                <img
+                  src="./images/mockup_pc_hair-salon.jpg"
+                  alt="LIFE hair design 美容室サイト"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./design-cafe.html">
+                <img
+                  src="./images/mockup_pc_design-cafe.jpg"
+                  alt="DESIGN CAFE 飲食店サイト"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./workers.html">
+                <img
+                  src="./images/mockup_pc_workers.jpg"
+                  alt="WORKERS コワーキングスペースサイト"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./hamberger-pop.html">
+                <img
+                  src="./images/mockup_banner_hamberger-pop.jpg"
+                  alt="激旨バーガー新登場 ポップ系バナー"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./dezasuta-mobile.html">
+                <img
+                  src="./images/mockup_banner_dezasuta-mobile.jpg"
+                  alt="デザスタmobile 学割プランバナー"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="./bridge-design_logo.html">
+                <img
+                  src="./images/mockup_logo_bridge-design.jpg"
+                  alt="BRIDGE design ロゴマーク"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <button class="btn__arrow works__next">
+            <img class="works__arrow" src="./images/circle-right.svg" alt="" />
+            <img class="hover__arrow" src="./images/hover_right.svg" alt="" />
+          </button>
+        </div>
+        <button class="btn__primary">
+          <a class="btn__text" href="./works.html">すべてみる</a>
+          <img class="icon-white" src="./images/arrow_white.svg" alt="" />
+          <img class="icon-blue" src="./images/arrow_blue.svg" alt="" />
+        </button>
+      </section>
+      <!-- ここまでworks -->
+
+      <section id="contact">
+        <h2 class="contact__h2">Contact</h2>
+        <div class="contact__content">
+          <p>
+            ご覧いただきありがとうございます<br />お気軽にお声がけください<br />ご連絡を楽しみにお待ちしております
+          </p>
+          <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSctZsBIZdxXCVGPhwSDLqtzagXmsGWMpe8Hnk6gC4BsB5pi2Q/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            id="myForm"
+          >
+            <div class="form__group">
+              <label for="name">お名前</label>
+              <input type="text" name="entry.2005620554" id="name" required />
+            </div>
+            <div class="form__group">
+              <label for="email">メールアドレス</label>
+              <input type="email" name="entry.1045781291" id="email" required />
+            </div>
+            <div class="form__group">
+              <label for="tel">電話番号</label>
+              <input type="text" name="entry.1166974658" id="tel" />
+            </div>
+            <div class="form__group">
+              <label for="message">お問い合わせ内容</label>
+              <textarea name="entry.839337160" id="message"></textarea>
+            </div>
+            <button type="submit" class="btn__primary">
+              <span class="btn__text">送信する</span>
+              <img class="icon-white" src="./images/arrow_white.svg" alt="" />
+              <img class="icon-blue" src="./images/arrow_blue.svg" alt="" />
+            </button>
+          </form>
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+          ></iframe>
+        </div>
+      </section>
+      <!-- ここまでcontact -->
+    </main>
+
+    <footer>
+      <nav class="footer__nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="copy">©︎ BRIDGE design</p>
+    </footer>
+    <!-- ここまでfooter -->
+
+    <script>
+      const MIN_DISPLAY_TIME = 5600;
+      const startTime = Date.now();
+
+      window.addEventListener("load", function () {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(MIN_DISPLAY_TIME - elapsed, 0);
+
+        setTimeout(function () {
+          document.querySelector(".text-loader").classList.add("is-hidden");
+          document.querySelector(".main-visual").classList.add("is-visible");
+        }, remaining);
+      });
+    </script>
+    <!-- loading -->
+
+    <script>
+      document
+        .getElementById("hidden_iframe")
+        .addEventListener("load", function () {
+          if (window.formSubmitted) {
+            window.location.href = "./thanks.html";
+          }
+        });
+      document.getElementById("myForm").addEventListener("submit", function () {
+        window.formSubmitted = true;
+      });
+    </script>
+    <!-- サンクスページ -->
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(function () {
+        $(".works__list-slick").slick({
+          slidesToShow: 4, // 一度に表示する枚数（既存デザインに合わせて調整）
+          slidesToScroll: 1,
+          arrows: true,
+          prevArrow: $(".works__prev"),
+          nextArrow: $(".works__next"),
+          dots: false,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+    <!-- slider -->
+  </body>
+</html>

@@ -1,0 +1,1084 @@
+@charset "UTF-8";
+
+/* ====================
+common
+==================== */
+
+:root {
+  --base-color: #fff;
+  --main-color: #272343;
+  --accent-color: #84b5c5;
+}
+
+body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--main-color);
+  background-color: var(--base-color);
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  color: var(--main-color);
+}
+
+h2::first-letter {
+  color: var(--accent-color);
+}
+
+/* ------- footer ------- */
+
+footer {
+  height: 306px;
+  background-image: url(/images/footer_pc.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.footer__nav ul {
+  display: flex;
+  gap: 80px;
+  width: 440px;
+  margin: 0 auto;
+  padding-top: 152px;
+  font-family: "Lato", sans-serif;
+  color: #666;
+}
+
+.footer__nav li:hover {
+  color: var(--accent-color);
+}
+
+.copy {
+  padding-top: 64px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+/* ここまでfooter */
+
+/* ====================
+PC index.html
+==================== */
+
+/* ------- loading ------- */
+
+.text-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: var(--base-color);
+  z-index: 10000;
+  font-family: "Lato", sans-serif;
+  font-size: 240px;
+  font-weight: 300;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+.text-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.text-loader::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: currentColor;
+  margin-left: 3px;
+  animation: text-dot 2.8s infinite;
+}
+
+@keyframes text-dot {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ここまでloading */
+
+/* ------- header ------- */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 24px 5.5%;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 40px;
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  /* ↑文字幅ちょうどの要素にする*/
+  padding: 8px 0;
+  /* ↑クリックしやすくする */
+  color: var(--main-color);
+}
+
+.link::after {
+  content: "";
+  /* ↑実体のない箱＝下線 */
+  position: absolute;
+  left: 50%;
+  /* ↑横方向のスタート地点を中心に */
+  bottom: -1px;
+  width: 0;
+  /* ↑最初は見えない＝横幅ゼロ＝線が存在しない状態 */
+  height: 1px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+  /* ↑なめらかに伸びる動き＝幅が 0 → 100% に変わるとき0.3秒かけてスッと広がる */
+  transform: translateX(-50%);
+  /* ↑-50%戻して真ん中を基準に配置 */
+}
+
+/* 下線の横幅を文字全体の幅まで広げる */
+.link:hover::after {
+  width: 100%;
+}
+
+.logo {
+  width: 152px;
+}
+
+.header__nav-sp {
+  display: none;
+}
+
+.hamberger {
+  display: none;
+}
+/* ここまでheader */
+
+/* ------- main-visual ------- */
+
+.mv-wrap {
+  position: relative;
+  max-width: 1280px;
+  margin: 100px 5.5% 0;
+}
+
+.main-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* 追加：初期は非表示状態 */
+  /* opacity: 0; 
+  transform: translateY(30px);
+  transition:;
+  opacity 1.2s ease,
+  transform 1.2s ease;*/
+  /* ↑mvがふわっと現れる */
+}
+
+/* JSでこのクラスを付与すると表示される */
+/* .main-visual.is-visible { 
+  opacity: 1;
+  transform: translateY(0);
+}*/
+
+.main-visual picture,
+.main-visual img {
+  display: block;
+  width: 100%;
+  margin-bottom: 362px;
+}
+
+.mv__catch-copy {
+  display: block;
+  background-color: var(--base-color);
+  border-radius: 8px;
+  padding: 32px 16px;
+  color: var(--main-color);
+  font-size: 40px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  position: absolute;
+  position: absolute;
+  top: 62px;
+  right: 65px;
+}
+
+.lead {
+  position: absolute;
+  top: 612px;
+  left: -8px;
+  z-index: 2;
+}
+
+.lead__text {
+  font-size: 20px;
+  line-height: 3;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* ここまでmain-visual */
+
+/* ------- scroll ------- */
+
+.scroll {
+  position: absolute;
+  top: 650px;
+  right: -45px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll__text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.scroll__line {
+  position: relative;
+  width: 1px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.scroll__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #666;
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(80px);
+  }
+}
+
+/* ここまでscroll */
+
+/* ------- about ------- */
+
+#about,
+#works {
+  margin: 0 auto 272px;
+}
+
+.about__content {
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.about__h2 {
+  margin-bottom: 112px;
+}
+
+.about__box01 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.about__box01 div {
+  width: 50%;
+}
+
+.h3__sub {
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--accent-color);
+}
+
+.h3__name {
+  margin-bottom: 32px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about__text01 {
+  line-height: 2;
+  margin-bottom: 64px;
+}
+
+.about__btn {
+  display: flex;
+  margin-left: auto;
+}
+
+.about__btn-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.about__btn:hover .about__btn-text {
+  transform: translateX(10px);
+}
+
+.about__btn img {
+  display: block;
+  width: 164px;
+  margin-top: 8px;
+}
+
+.about__img01 {
+  width: 32%;
+  aspect-ratio: 2/3;
+  border-radius: 8px;
+}
+/* ここまでabout */
+
+/* ------- works ------- */
+
+.works__h2 {
+  margin-bottom: 168px;
+}
+
+.works__slider01 {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1440px;
+  margin: 0 auto 72px;
+  padding: 0 24px;
+}
+
+.works__list-slick {
+  display: block;
+  flex: 1; /* スライダーを残り幅いっぱいに広げる */
+  min-width: 0; /* flexによる横幅の崩れを防ぐ */
+  overflow: hidden; /* はみ出したスライドを隠す */
+}
+
+.works__list-slick .slick-slide {
+  margin: 0 16px; /* スライド間の余白 */
+}
+
+.works__list-slick .slick-list {
+  margin: 0 -16px; /* 左右の余白を相殺 */
+  overflow: hidden;
+}
+
+.works__list-slick img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn__arrow {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0; /* 矢印が縮まないようにする */
+}
+
+.btn__arrow .works__arrow,
+.btn__arrow .hover__arrow {
+  position: absolute;
+  inset: 0; /* 親要素いっぱいに重ねる */
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+}
+
+/* 通常時 */
+.btn__arrow .works__arrow {
+  opacity: 1;
+}
+
+.btn__arrow .hover__arrow {
+  opacity: 0;
+}
+
+/* ホバー時 */
+.btn__arrow:hover .works__arrow {
+  opacity: 0;
+}
+
+.btn__arrow:hover .hover__arrow {
+  opacity: 1;
+}
+
+.btn__primary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 193px;
+  height: 48px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: 1px solid #84b5c5; /* ホバー時の縁取り用に追加 */
+  border-radius: 40px;
+  color: var(--base-color);
+  background: var(--accent-color);
+  transition: 0.3s;
+  cursor: pointer; /* buttonはデフォルトでcursor: pointerだが明示しておくと安心 */
+}
+
+.btn__primary .btn__text {
+  color: var(--base-color);
+  transition: 0.3s;
+}
+
+.btn__primary img {
+  width: 30px;
+}
+
+/* ホバー時 */
+.btn__primary:hover {
+  background: var(--base-color);
+}
+
+.btn__primary:hover .btn__text {
+  color: var(--accent-color);
+}
+
+/* SVG切り替え */
+.btn__primary .icon-blue {
+  display: none;
+}
+
+.btn__primary:hover .icon-white {
+  display: none;
+}
+
+.btn__primary:hover .icon-blue {
+  display: block;
+}
+
+/* ここまでworks */
+
+/* ------- contact ------- */
+
+#contact {
+  margin: 0 auto 152px;
+}
+
+.contact__content {
+  max-width: 648px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contact__h2 {
+  margin-bottom: 137px;
+}
+
+.contact__content p {
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.form__group:nth-of-type(4) {
+  margin-bottom: 72px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 10px 16px;
+}
+/* ここまでcontact */
+
+/* ------- サンクスページ ------- */
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.thanks__h2 {
+  margin: 120px 0 88px;
+}
+
+.thanks p {
+  font-size: 24px;
+  line-height: 2;
+  text-align: center;
+}
+
+.thanks__text {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-bottom: 64px;
+}
+
+.thanks img {
+  display: block;
+  width: 166px;
+  height: 152px;
+  margin: 0 auto;
+}
+
+/* ここまでサンクスページ */
+
+/* ====================
+PC about.html
+==================== */
+
+section {
+  margin: 0 auto 272px;
+}
+
+.section__inner {
+  max-width: 1048px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------- about ------- */
+
+.about {
+  margin-top: 100px;
+}
+
+.about__heading {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--main-color);
+  margin-bottom: 80px;
+}
+
+.about__heading:first-letter {
+  color: var(--main-color);
+}
+
+.about__box02 {
+  width: 49%;
+}
+
+.about__text02 {
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.about__img02 {
+  width: 33%;
+  aspect-ratio: 2/3;
+  border-radius: 8px;
+  position: relative;
+}
+
+.about__circle {
+  width: 139px;
+  height: 139px;
+  position: absolute;
+  top: 170px;
+  right: 180px;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ここまでabout */
+
+/* ------- skill ------- */
+
+.skill__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__item {
+  width: 29%;
+}
+
+.skill__item h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.skill__item img {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.skill__item p {
+  line-height: 2;
+}
+
+/* ここまでskill */
+
+/* ------- important ------- */
+
+.important__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 56px;
+  border-bottom: 1px solid #ddd;
+}
+
+.important__item:last-of-type {
+  border-bottom: none;
+}
+
+.important__h3 {
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 2;
+  width: 18%;
+}
+
+.important__item p {
+  line-height: 2;
+  width: 65%;
+}
+
+/* ここまでimportant */
+
+/* ------- favorite ------- */
+
+#favorite {
+  margin: 0 auto 120px;
+}
+
+.favorite__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favorite__item {
+  width: 29%;
+}
+
+.favorite__item h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.favorite__item img {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 40px;
+}
+
+.favorite__item p {
+  line-height: 2;
+}
+
+/* ここまでfavorite */
+
+/* ====================
+PC works.html
+==================== */
+
+.works__all {
+  max-width: 1048px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 24px;
+}
+
+.works__heading {
+  margin: 220px 0 112px;
+}
+
+.menu__list {
+  position: fixed;
+  top: 400px;
+  left: 223px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.menu__list li:hover {
+  color: var(--accent-color);
+}
+
+.menu__title {
+  color: var(--accent-color);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.works__list {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.works__list img {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.mockup__link {
+  display: block;
+  overflow: hidden;
+  height: 433px; /* 高さを固定 */
+}
+
+.mockup__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 縦横比を保ちながら枠を埋める */
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.mockup__link:hover img {
+  width: 100%;
+  transform: scale(1.1);
+}
+
+.works__list p:not(.works__title) {
+  line-height: 1;
+  text-align: center;
+  margin: 32px 0 120px;
+}
+
+.works__title {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.works__list p:nth-of-type(4) {
+  margin-bottom: 0;
+}
+
+.works__content {
+  display: flex;
+  flex-direction: column;
+  gap: 168px;
+  width: 65%;
+  margin: 0 auto 144px;
+}
+
+.works__h1 {
+  position: fixed;
+  top: 380px;
+  right: 210px;
+  color: var(--accent-color);
+  font-family: "Lato", sans-serif;
+  font-size: 64px;
+  font-weight: 300;
+  writing-mode: vertical-lr;
+  line-height: 1;
+}
+
+/* ====================
+PC works 個別ページ
+==================== */
+
+/* ------- bridge-design ------- */
+
+.works__slider02 {
+  max-width: 1000px;
+  margin: 0 auto 72px;
+  border-radius: 16px;
+}
+
+.slick-initialized .slick-slide {
+  border-radius: 16px;
+}
+
+/* ドット全体の配置 */
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+/* 各ドットのli要素 */
+.slick-dots li {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* デフォルトのbutton文字（数字）を消す */
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  text-indent: -9999px; /* 中の数字を見えなくする */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* デフォルトで付いている::before の飾り文字を消す */
+.slick-dots li button::before {
+  content: none;
+}
+
+/* アクティブなドットの色を変える */
+.slick-dots li.slick-active button {
+  background-color: #84b5c5;
+}
+
+/* ホバー時 */
+.slick-dots li button:hover {
+  background-color: #ddd;
+}
+
+.works__wrapper {
+  max-width: 1048px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.works__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px;
+  border-bottom: 1px solid #ddd;
+}
+
+dt {
+  color: var(--accent-color);
+  font-size: 20px;
+  width: 20%;
+  line-height: 2;
+}
+
+dd {
+  width: 76%;
+  line-height: 2;
+}
+
+.works__h3 {
+  font-size: 24px;
+  font-weight: 400;
+  padding: 120px 0 48px;
+  border-bottom: 1px solid #ddd;
+}
+
+.works__item:last-of-type {
+  border-bottom: none;
+}
+
+.btn__secondary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 210px;
+  height: 48px;
+  margin: 0 auto 144px;
+  padding: 16px 32px;
+  border: 1px solid #84b5c5; /* ホバー時の縁取り用に追加 */
+  border-radius: 40px;
+  color: var(--accent-color);
+  background: #fff;
+  transition: 0.3s;
+}
+
+.btn__secondary img {
+  width: 30px;
+}
+
+/* ホバー時 */
+.btn__secondary:hover {
+  background: #84b5c5;
+}
+
+.btn__secondary:hover a {
+  color: var(--base-color);
+}
+
+/* SVG切り替え */
+.btn__secondary .icon-white {
+  display: none;
+}
+
+.btn__secondary:hover .icon-blue {
+  display: none;
+}
+
+.btn__secondary:hover .icon-white {
+  display: block;
+}
+
+/* ここまでbridge-design */
+
+/* ------- website共通 ------- */
+
+.works__scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 63px;
+  margin: 0 auto 64px;
+}
+
+.works__scroll p {
+  color: #666;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.works__scroll img {
+  width: 50px;
+  height: 50px;
+}
+
+.scroll__img {
+  max-width: 1000px;
+  margin: 0 auto 120px;
+  display: flex;
+  gap: 96px;
+}
+
+.scroll__pc-wrap {
+  border-radius: 20px;
+  border: solid 10px #f2f2f2;
+  aspect-ratio: 640 / 700;
+  width: 73vw;
+  overflow-y: scroll; /* スクロールは親(div)に指定 */
+}
+
+.scroll__sp-wrap {
+  border-radius: 20px;
+  border: solid 10px #f2f2f2;
+  aspect-ratio: 270 / 700;
+  width: 29vw;
+  overflow-y: scroll; /* スクロールは親(div)に指定 */
+}
+
+.scroll__pc,
+.scroll__sp {
+  width: 100%;
+  height: auto; /* 画像本来の縦横比を維持 → 枠より高くなる */
+  display: block;
+}
+
+/* ここまでwebsite共通 */
+
+/* ------- banner共通 ------- */
+
+.mockup__banner {
+  display: block;
+  max-width: 1000px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto 72px;
+}
+
+.banner__rectangle,
+.banner__square {
+  display: block;
+  max-width: 60%;
+  margin: 0 auto 120px;
+}
+
+.banner__square {
+  max-width: 35%;
+}
+
+/* ここまでbanner */
+
+/* ====================
+タブレット works.html
+==================== */
+
+@media (max-width: 1024px) {
+  
+
+}
+
+  
