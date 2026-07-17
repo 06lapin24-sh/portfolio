@@ -26,6 +26,7 @@
   </head>
 
   <body>
+    <div id="cursor"></div>
     <header id="header">
       <h1 class="logo">
         <a href="./index.html"
@@ -34,27 +35,56 @@
       </h1>
       <nav class="header__nav">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li class="link"><a href="./index.html">Home</a></li>
+          <li class="link"><a href="./about.html">About</a></li>
+          <li class="link"><a href="./works.html">Works</a></li>
+          <li class="link"><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="hamberger">
+      <div class="hamburger">
         <span></span>
       </div>
       <nav class="header__nav-sp">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./works.html">Works</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+    <!-- ここまでheader -->
 
-    <main>
+    <main class="works__detail-main">
+    <div class="heading-arch">
+        <div class="heading-arch__bg" aria-hidden="true">
+          <svg
+            width="1440"
+            height="274"
+            viewBox="0 0 1440 274"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="heading-arch__blue"
+              d="M1440.5 273.328C1440.5 193.624 1118.14 83.3281 720.5 83.3281C322.856 83.3281 0.5 193.624 0.5 273.328"
+              stroke="#BDE0EB"
+              stroke-width="1"
+              stroke-linecap="round"
+              pathLength="1"
+            />
+            <path
+              class="heading-arch__grey"
+              d="M1440.5 0.5C1440.5 80.2037 1118.14 190.5 720.5 190.5C322.856 190.5 0.5 80.2037 0.5 0.5"
+              stroke="#DDDDDD"
+              stroke-width="1"
+              stroke-linecap="round"
+              pathLength="1"
+            />
+          </svg>
+        </div>
       <h2 class="works__heading">Works</h2>
+    </div>
       <div class="works__slider02">
         <img src="./images/mockup_pc_design-cafe.jpg" alt="DESIGN CAFE PC版" />
         <img
@@ -63,7 +93,9 @@
         />
       </div>
       <div class="works__wrapper">
-        <h3 class="works__h3">カフェのWebサイト（架空サイト）</h3>
+        <h3 class="works__h3">
+          カフェのWebサイト（架空サイト）
+        </h3>
         <div class="works__list">
           <dl class="works__item">
             <dt>概要</dt>
@@ -123,6 +155,35 @@
           />
         </div>
       </div>
+      <!-- SP版 アコーディオン -->
+      <div class="accordion__img">
+        <div class="accordion__pc-wrap">
+          <button class="accordion__btn" type="button">
+            <span class="accordion__label">パソコン版デザインをみる</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__content">
+            <img
+              class="accordion__pc"
+              src="./images/pc_design-cafe.jpg"
+              alt="パソコン版デザイン"
+            />
+          </div>
+        </div>
+        <div class="accordion__sp-wrap">
+          <button class="accordion__btn" type="button">
+            <span class="accordion__label">スマホ版デザインをみる</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__content">
+            <img
+              class="accordion__sp"
+              src="./images/sp_design-cafe.jpg"
+              alt="スマホ版デザイン"
+            />
+          </div>
+        </div>
+      </div>
       <button class="btn__secondary">
         <img class="icon-blue" src="./images/back_blue.svg" alt="" />
         <img class="icon-white" src="./images/back_white.svg" alt="" />
@@ -134,16 +195,30 @@
       <nav class="footer__nav">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./works.html">Works</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <p class="copy">©︎ BRIDGE design</p>
     </footer>
+
     <!-- jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <!-- slickのJavaScript -->
+
+    <script src="./js/main.js"></script>
+
+    <!-- ハンバーガーメニュー -->
+    <script>
+      $(function () {
+        $(".hamburger").click(function () {
+          $(".hamburger").toggleClass("open");
+          $(".header__nav-sp").fadeToggle();
+        });
+      });
+    </script>
+
+    <!-- slick -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
       $(function () {
@@ -155,5 +230,5 @@
         });
       });
     </script>
-  </body>
+
 </html>

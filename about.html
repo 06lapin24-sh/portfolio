@@ -14,9 +14,15 @@
     />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- fade-inのCDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
+    <div id="cursor"></div>
     <header id="header">
       <h1 class="logo">
         <a href="./index.html"
@@ -25,141 +31,238 @@
       </h1>
       <nav class="header__nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li class="link"><a href="./index.html">Home</a></li>
+          <li class="link"><a href="./about.html">About</a></li>
+          <li class="link"><a href="./works.html">Works</a></li>
+          <li class="link"><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="hamberger">
+      <div class="hamburger">
         <span></span>
       </div>
       <nav class="header__nav-sp">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./works.html">Works</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+    <!-- ここまでheader -->
 
     <main>
       <section class="about">
-        <h2 class="about__heading">はじめまして</h2>
-        <div class="section__inner">
-          <div class="about__box02">
-            <p class="h3__sub">Hisadome Shiho</p>
-            <h3 class="h3__name">久留 志保</h3>
-            <p class="about__text02">
-              1987年生まれ、鹿児島県在住。<br />子育てをしながら、Webデザインを学んでいます。
-            </p>
-            <br />
-            <p class="about__text02">
-              転職、結婚、出産、再就職と環境の変化を経験する中で、働き方の選択肢を広げたいと思うようになりました。
-            </p>
-            <br />
-            <p class="about__text02">
-              以前から、人やサービスの魅力、その背景にある想いに触れることが好きでした。そんな想いと、自分が学び続けられることが重なり、たどり着いたのがWebデザインです。
-            </p>
-            <br />
-            <p class="about__text02">
-              これまでアパレル販売、医療事務、総務など、人と関わる仕事やサポート業務に携わってきました。その経験を活かし、相手の立場に立って考えながら、伝えたい魅力や想いが届くデザインを目指しています。
-            </p>
+        <div data-aos="fade-up" data-aos-duration="1500">
+          <h2 class="about__heading">はじめまして</h2>
+          <div class="section__inner">
+            <div class="about__box02">
+              <p class="h3__sub">Hisadome Shiho</p>
+              <h3 class="h3__name">久留 志保</h3>
+              <p class="about__text02">
+                1987年生まれ、鹿児島県在住。<br />子育てをしながら、Webデザインを学んでいます。
+              </p>
+              <br />
+              <p class="about__text02">
+                転職、結婚、出産、再就職と環境の変化を経験する中で、働き方の選択肢を広げたいと思うようになりました。
+              </p>
+              <br />
+              <p class="about__text02">
+                以前から、人やサービスの魅力、その背景にある想いに触れることが好きでした。そんな想いと、自分が学び続けられることが重なり、たどり着いたのがWebデザインです。
+              </p>
+              <br />
+              <p class="about__text02">
+                これまでアパレル販売、医療事務、総務など、人と関わる仕事やサポート業務に携わってきました。その経験を活かし、相手の立場に立って考えながら、伝えたい魅力や想いが届くデザインを目指しています。
+              </p>
+            </div>
+            <div class="about__circle">
+              <img
+                class="about__img02"
+                src="./images/about02.jpg"
+                alt="橋の上で振り返る女性デザイナーの全身写真"
+              />
+              <div class="circle">
+                <img src="./images/circle-about.svg" alt="" />
+              </div>
+            </div>
           </div>
-          <img
-            class="about__img02"
-            src="./images/about02.jpg"
-            alt="橋の上で振り返る女性デザイナーの全身写真"
-          />
         </div>
-        <img class="about__circle" src="./images/circle-about.svg" alt="">
       </section>
       <!-- ここまでabout -->
 
+      <div class="arch-wrap">
+        <svg
+          width="1440"
+          height="274"
+          viewBox="0 0 1440 274"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="arch-blue"
+            d="M1440.5 273.328C1440.5 193.624 1118.14 83.3281 720.5 83.3281C322.856 83.3281 0.5 193.624 0.5 273.328"
+            stroke="#BDE0EB"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+          <path
+            class="arch-grey"
+            d="M1440.5 0.5C1440.5 80.2037 1118.14 190.5 720.5 190.5C322.856 190.5 0.5 80.2037 0.5 0.5"
+            stroke="#DDDDDD"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+        </svg>
+      </div>
+      <!-- ここまでarch-wrap -->
+
       <section>
-        <h2 class="about__heading">伝わるかたちへ</h2>
-        <div class="section__inner">
-          <ul class="skill__list">
-            <li class="skill__item">
-              <h3>デザイン</h3>
-              <img src="./images/icon_design.svg" alt="" />
-              <p>
-                情報の整理や視線の流れを意識し、見る人が迷わず、心地よく情報を受け取れるデザインを心がけています。目的やターゲットに合わせて、伝えたいことが無理なく伝わるよう、レイアウトや表現を工夫しています。
-              </p>
-            </li>
-            <li class="skill__item">
-              <h3>コーディング</h3>
-              <img src="./images/icon_cording.svg" alt="" />
-              <p>
-                HTML・CSS、jQueryを用いたコーディングを行っています。規則性のある記述を意識し、見やすく分かりやすいコードを書くよう心がけています。複雑な動きの実装には、AIも活用しながら効率的に対応しています。
-              </p>
-            </li>
-            <li class="skill__item">
-              <h3>ライティング</h3>
-              <img src="./images/icon_writing.svg" alt="" />
-              <p>
-                伝えたい想いや魅力を整理し、読み手の立場を意識しながら、一つひとつの言葉を丁寧に選び、分かりやすく伝わる文章を心がけています。デザインと合わせて、より伝わりやすい表現になるよう意識しています。
-              </p>
-            </li>
-          </ul>
+        <div data-aos="fade-up" data-aos-duration="1500">
+          <h2 class="about__heading">伝わるかたちへ</h2>
+          <div class="section__inner">
+            <ul class="skill__list">
+              <li class="skill__item">
+                <h3>デザイン</h3>
+                <img src="./images/icon_design.svg" alt="" />
+                <p>
+                  情報の整理や視線の流れを意識し、見る人が迷わず、心地よく情報を受け取れるデザインを心がけています。目的やターゲットに合わせて、伝えたいことが無理なく伝わるよう、レイアウトや表現を工夫しています。
+                </p>
+              </li>
+              <li class="skill__item">
+                <h3>コーディング</h3>
+                <img src="./images/icon_cording.svg" alt="" />
+                <p>
+                  HTML・CSS、jQueryを用いたコーディングを行っています。規則性のある記述を意識し、見やすく分かりやすいコードを書くよう心がけています。複雑な動きの実装には、AIも活用しながら効率的に対応しています。
+                </p>
+              </li>
+              <li class="skill__item">
+                <h3>ライティング</h3>
+                <img src="./images/icon_writing.svg" alt="" />
+                <p>
+                  伝えたい想いや魅力を整理し、読み手の立場を意識しながら、一つひとつの言葉を丁寧に選び、分かりやすく伝わる文章を心がけています。デザインと合わせて、より伝わりやすい表現になるよう意識しています。
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!-- ここまでskill -->
 
+      <div class="arch-wrap">
+        <svg
+          width="1440"
+          height="274"
+          viewBox="0 0 1440 274"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="arch-blue"
+            d="M1440.5 273.328C1440.5 193.624 1118.14 83.3281 720.5 83.3281C322.856 83.3281 0.5 193.624 0.5 273.328"
+            stroke="#BDE0EB"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+          <path
+            class="arch-grey"
+            d="M1440.5 0.5C1440.5 80.2037 1118.14 190.5 720.5 190.5C322.856 190.5 0.5 80.2037 0.5 0.5"
+            stroke="#DDDDDD"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+        </svg>
+      </div>
+      <!-- ここまでarch-wrap -->
+
       <section>
-        <h2 class="about__heading">大切にしていること</h2>
-        <div class="section__inner">
-          <ul class="important__list">
-            <li class="important__item">
-              <h3 class="important__h3">人に寄り添う</h3>
-              <p>
-                人に興味を持ち、相手の状況や気持ちを想像しながら「どうしたら喜んでもらえるか」を考える時間に楽しさを感じます。相手の喜ぶ顔を見ると、嬉しくなります。サプライズを考えることも好きです。
-              </p>
-            </li>
-            <li class="important__item">
-              <h3 class="important__h3">学びを楽しむ</h3>
-              <p>
-                気になったことや必要だと感じたことは、自分で調べて理解しながら取り入れるようにしています。これまでの経験の中でも、必要なことをその都度学び直しながら、少しずつ自分の中に積み重ねてきました。
-              </p>
-            </li>
-            <li class="important__item">
-              <h3 class="important__h3">目的に向かう</h3>
-              <p>
-                目的から逆算してやるべきことを整理し、優先順位をつけながら進めています。状況に応じて柔軟に調整できるよう、余白を持ったスケジュール管理を心がけています。Notionで進捗を見える化し、計画的に取り組んでいます。
-              </p>
-            </li>
-          </ul>
+        <div data-aos="fade-up" data-aos-duration="1500">
+          <h2 class="about__heading">大切にしていること</h2>
+          <div class="section__inner">
+            <ul class="important__list">
+              <li class="important__item">
+                <h3 class="important__h3">人に寄り添う</h3>
+                <p>
+                  人に興味を持ち、相手の状況や気持ちを想像しながら「どうしたら喜んでもらえるか」を考える時間に楽しさを感じます。相手の喜ぶ顔を見ると、嬉しくなります。サプライズを考えることも好きです。
+                </p>
+              </li>
+              <li class="important__item">
+                <h3 class="important__h3">学びを楽しむ</h3>
+                <p>
+                  気になったことや必要だと感じたことは、自分で調べて理解しながら取り入れるようにしています。これまでの経験の中でも、必要なことをその都度学び直しながら、少しずつ自分の中に積み重ねてきました。
+                </p>
+              </li>
+              <li class="important__item">
+                <h3 class="important__h3">目的に向かう</h3>
+                <p>
+                  目的から逆算してやるべきことを整理し、優先順位をつけながら進めています。状況に応じて柔軟に調整できるよう、余白を持ったスケジュール管理を心がけています。Notionで進捗を見える化し、計画的に取り組んでいます。
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!-- ここまでimportant -->
 
+      <div class="arch-wrap">
+        <svg
+          width="1440"
+          height="274"
+          viewBox="0 0 1440 274"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="arch-blue"
+            d="M1440.5 273.328C1440.5 193.624 1118.14 83.3281 720.5 83.3281C322.856 83.3281 0.5 193.624 0.5 273.328"
+            stroke="#BDE0EB"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+          <path
+            class="arch-grey"
+            d="M1440.5 0.5C1440.5 80.2037 1118.14 190.5 720.5 190.5C322.856 190.5 0.5 80.2037 0.5 0.5"
+            stroke="#DDDDDD"
+            stroke-width="1"
+            stroke-linecap="round"
+            pathLength="1"
+          />
+        </svg>
+      </div>
+      <!-- ここまでarch-wrap -->
+
       <section id="favorite">
-        <h2 class="about__heading">好きなこと</h2>
-        <div class="section__inner">
-          <ul class="favorite__list">
-            <li class="favorite__item">
-              <h3>ラジオ</h3>
-              <img src="./images/icon_radio.svg" alt="" />
-              <p>
-                家事をしながら、音声配信アプリで聴いています。手を止めることなく学びや気づきを得られるため、限られた時間を有効に使えるところが魅力です。
-              </p>
-            </li>
-            <li class="favorite__item">
-              <h3>娘と過ごす時間</h3>
-              <img src="./images/icon_heart.svg" alt="" />
-              <p>
-                しっかり者の娘ですが、無邪気な一面もあり、日々癒されています。一緒に過ごす時間を大切にしながら、その笑顔や成長を楽しみにしています。
-              </p>
-            </li>
-            <li class="favorite__item">
-              <h3>散歩</h3>
-              <img src="./images/icon_walking.svg" alt="" />
-              <p>
-                意外な発見や季節の移ろいを感じながら、目的を決めず家族と夕方に歩いています。気分転換にもなり、気持ちもリフレッシュします。
-              </p>
-            </li>
-          </ul>
+        <div data-aos="fade-up" data-aos-duration="1500">
+          <h2 class="about__heading">好きなこと</h2>
+          <div class="section__inner">
+            <ul class="favorite__list">
+              <li class="favorite__item">
+                <h3>ラジオ</h3>
+                <img src="./images/icon_radio.svg" alt="" />
+                <p>
+                  家事をしながら、音声配信アプリで聴いています。手を止めることなく学びや気づきを得られるため、限られた時間を有効に使えるところが魅力です。
+                </p>
+              </li>
+              <li class="favorite__item">
+                <h3>娘と過ごす時間</h3>
+                <img src="./images/icon_heart.svg" alt="" />
+                <p>
+                  しっかり者の娘ですが、無邪気な一面もあり、日々癒されています。一緒に過ごす時間を大切にしながら、その笑顔や成長を楽しみにしています。
+                </p>
+              </li>
+              <li class="favorite__item">
+                <h3>散歩</h3>
+                <img src="./images/icon_walking.svg" alt="" />
+                <p>
+                  意外な発見や季節の移ろいを感じながら、目的を決めず家族と夕方に歩いています。気分転換にもなり、気持ちもリフレッシュします。
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!-- ここまでfavorite -->
@@ -169,12 +272,32 @@
       <nav class="footer__nav">
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#works">Works</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./works.html">Works</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <p class="copy">©︎ BRIDGE design</p>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <!-- ハンバーガーメニュー -->
+    <script>
+      $(function () {
+        $(".hamburger").click(function () {
+          $(".hamburger").toggleClass("open");
+          $(".header__nav-sp").fadeToggle();
+        });
+      });
+    </script>
+
+    <!-- fade-in -->
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
