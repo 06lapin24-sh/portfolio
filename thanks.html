@@ -15,20 +15,104 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
-    <section class="thanks">
-      <h2 class="thanks__h2">Thank you</h2>
-      <div class="thanks__text">
-        <p>
-          お問い合わせいただきありがとうございます<br />
-          受け付けいたしました
-        </p>
-        <p>
-          心をこめて<br />
-          2日以内に返信させていただきます
-        </p>
-      </div>
-      <img src="./images/icon_mail.svg" alt="" />
-    </section>
+    <div id="cursor"></div>
+    <div class="page-wrap">
+      <header id="header">
+        <h1 class="logo">
+          <a href="./index.html"
+            ><img src="./images/logo.svg" alt="BRIDGE design"
+          /></a>
+        </h1>
+        <nav class="header__nav">
+          <ul>
+            <li class="link"><a href="./index.html">Home</a></li>
+            <li class="link"><a href="./about.html">About</a></li>
+            <li class="link"><a href="./works.html">Works</a></li>
+            <li class="link"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger">
+          <span></span>
+        </div>
+        <nav class="header__nav-sp">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./works.html">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- ここまでheader -->
+
+      <section class="thanks">
+        <div class="heading-arch">
+          <div class="heading-arch__bg" aria-hidden="true">
+            <svg
+              width="1440"
+              height="274"
+              viewBox="0 0 1440 274"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="heading-arch__blue"
+                d="M1440.5 273.328C1440.5 193.624 1118.14 83.3281 720.5 83.3281C322.856 83.3281 0.5 193.624 0.5 273.328"
+                stroke="#BDE0EB"
+                stroke-width="1"
+                stroke-linecap="round"
+                pathLength="1"
+              />
+              <path
+                class="heading-arch__grey"
+                d="M1440.5 0.5C1440.5 80.2037 1118.14 190.5 720.5 190.5C322.856 190.5 0.5 80.2037 0.5 0.5"
+                stroke="#DDDDDD"
+                stroke-width="1"
+                stroke-linecap="round"
+                pathLength="1"
+              />
+            </svg>
+          </div>
+          <h2 class="thanks__h2">Thank you</h2>
+        </div>
+        <div class="thanks__text">
+          <p>
+            お問い合わせいただきありがとうございます<br />
+            受け付けいたしました
+          </p>
+          <p>
+            心をこめて<br />
+            2日以内に返信させていただきます
+          </p>
+        </div>
+        <div class="icon-thanks">
+          <img src="./images/icon_mail.svg" alt="" />
+        </div>
+        <button class="btn__secondary">
+          <img class="icon-blue" src="./images/back_blue.svg" alt="" />
+          <a href="./index.html">トップへもどる</a>
+        </button>
+      </section>
+
+      <footer>
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./works.html">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="copy">©︎ BRIDGE design</p>
+      </footer>
+    </div>
+    <!-- ここまでfooter -->
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -337,10 +337,8 @@ index.html
 }
 
 .main-visual {
-  position: relative;
   overflow: hidden;
   border-radius: 16px;
-  overflow: hidden;
 }
 
 .main-visual picture,
@@ -713,11 +711,11 @@ textarea::placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  margin: 200px auto 0;
 }
 
 .thanks__h2 {
-  margin: 120px 0 88px;
+  margin: 120px 0;
 }
 
 .thanks p {
@@ -729,8 +727,8 @@ textarea::placeholder {
 .thanks__text {
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  margin-bottom: 64px;
+  gap: 32px;
+  margin: 120px 0 64px;
 }
 
 .thanks img {
@@ -740,6 +738,10 @@ textarea::placeholder {
   margin: 0 auto;
 }
 
+.icon-thanks {
+  margin-bottom: 64px;
+}
+
 /* ここまでサンクスページ */
 
 /* ========================================
@@ -747,12 +749,6 @@ about.html
 ======================================== */
 
 /* ------- common ------- */
-
-/*  
-section {
-  margin: 0 auto 272px;
-/* }
- */
 
 .section__inner {
   max-width: 1048px;
@@ -850,7 +846,7 @@ svg {
   stroke-dasharray: 1;
   stroke-dashoffset: 1; /* パスの定義方向どおり、右から左へ描画 */
   animation: drawBlue 1.2s ease-out 1s 1 forwards;
-  animation-play-state: paused; /* ← 追加 */
+  animation-play-state: paused;
 }
 
 /* JSでこのクラスが付いたら再生開始 */
@@ -1027,6 +1023,7 @@ works.html
 .mockup__link {
   display: block;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .mockup__link img {
@@ -1065,7 +1062,7 @@ works.html
 
 .works__h1 {
   position: sticky;
-  top: 380px;
+  top: 350px;
   align-self: flex-start;
   color: var(--accent-color);
   font-family: "Lato", sans-serif;
@@ -1189,7 +1186,6 @@ dd {
   border-radius: 40px;
   color: var(--accent-color);
   background: #fff;
-  transition: 0.3s;
 }
 
 .btn__secondary img {
@@ -1444,7 +1440,7 @@ SP
   .lead {
     position: absolute;
     top: 659px;
-    padding: 0px 14% 0 20.1%;
+    padding: 0px 14% 0 21.1%;
     width: 100%;
   }
 
@@ -1591,9 +1587,32 @@ SP
 
   /* ここまでcontact */
 
+  /* ------- サンクスページ ------- */
+
+  .thanks {
+    margin: 116px auto 0;
+  }
+
+  .thanks p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .thanks__text {
+    margin: 64px 0 32px;
+    gap: 20px;
+  }
+
+  .icon-thanks img {
+    width: 138px;
+    height: 125px;
+  }
+
+  /* ここまでサンクスページ */
+
   /* ======== about.html ======== */
 
-  /* ------- about------- */
+  /* ------- about ------- */
 
   .about__heading {
     font-size: 32px;
@@ -1609,17 +1628,14 @@ SP
   }
 
   .about__img02 {
-    width: 188px;
+    width: 100%;
     border-radius: 8px;
-    height: 282px;
+    height: auto;
     margin-bottom: 48px;
   }
 
-  .circle {
-    width: 80px;
-    height: 80px;
-    top: -24px;
-    right: -23px;
+  .about__circle {
+    width: 70%;
   }
 
   .about__box02 {
@@ -1671,7 +1687,7 @@ SP
   .important__item {
     display: block;
     padding: 0;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
 
   .important__item:last-of-type {
@@ -1688,7 +1704,7 @@ SP
   .important__item p {
     line-height: 1.75;
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     letter-spacing: 0.01em;
   }
 
@@ -1966,13 +1982,23 @@ SP
   }
 }
 
-@media (max-width: 425px) {
-  /* ------- アーチの高さ調整(SPのみ) ------- */
+@media (max-width: 600px) {
+  /* ------- アーチの高さ調整) ------- */
   .arch-wrap svg,
   .heading-arch__bg svg,
   .loader-arch-bg svg {
-    transform: scaleY(1.5); /* ← この数値で高さを調整 */
+    transform: scaleY(1.8); /* ← この数値で高さを調整 */
     transform-origin: center;
+  }
+}
+
+@media (max-width: 425px) {
+  /* ------- サークルの大きさ調整 ------- */
+  .circle {
+    width: 80px;
+    height: 80px;
+    top: -24px;
+    right: -23px;
   }
 
   /* ------- footerの高さ調整 ------- */
