@@ -1888,6 +1888,15 @@ SP
 
   /* アコーディオン */
 
+  /* 外枠(ボタン+中身)をこちらで一体化して囲む */
+  .accordion__pc-wrap,
+  .accordion__sp-wrap {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    overflow: hidden; /* 角丸からのはみ出しを防ぐ */
+    padding: 0 8px 8px;
+  }
+
   /* 中身は初期状態で高さ0(非表示) */
   .accordion__content {
     max-height: 0;
@@ -1908,10 +1917,9 @@ SP
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 14px;
+    padding: 14px 14px 6px;
     background: #fff;
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
+    border: none; /* ← 個別のボーダーは削除(外枠のwrapに統合) */
     cursor: pointer;
     font-size: 14px;
     color: var(--main-color);
