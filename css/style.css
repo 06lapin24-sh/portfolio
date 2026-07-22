@@ -1370,7 +1370,7 @@ SP
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     background: #ecf6f9;
   }
@@ -1378,7 +1378,6 @@ SP
   .header__nav-sp a {
     color: var(--main-color);
     font-size: 32px;
-    font-weight: 300;
     font-family: "Lato", sans-serif;
     letter-spacing: 0.02em;
   }
@@ -1513,7 +1512,7 @@ SP
   }
 
   .about__btn-inner {
-    text-align: center;
+    text-align: start;
   }
 
   .about__img01 {
