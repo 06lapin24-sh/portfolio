@@ -493,6 +493,10 @@ index.html
   margin-left: auto;
 }
 
+.about__btn-inner {
+  text-align: start;
+}
+
 .about__btn-text {
   display: inline-block;
   transition: transform 0.3s ease;
@@ -693,6 +697,7 @@ textarea {
   font-size: 16px;
   font-family: inherit;
   line-height: 1;
+  border: 1px solid #ddd; /* 罫線の色をここで指定 */
 }
 
 input::placeholder,
@@ -1509,10 +1514,6 @@ SP
 
   .about__box01 div {
     width: 100%;
-  }
-
-  .about__btn-inner {
-    text-align: start;
   }
 
   .about__img01 {
