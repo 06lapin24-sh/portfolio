@@ -698,6 +698,7 @@ textarea {
   font-family: inherit;
   line-height: 1;
   border: 1px solid #ddd; /* 罫線の色をここで指定 */
+  border-radius: 4px;
 }
 
 input::placeholder,
