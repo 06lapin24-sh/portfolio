@@ -1565,6 +1565,7 @@ SP
 
   #contact {
     margin: 0 auto 88px;
+    scroll-margin-top: 76px; /* スマホの実際のヘッダー高さ+余白に合わせて調整 */
   }
 
   .contact__content p {
