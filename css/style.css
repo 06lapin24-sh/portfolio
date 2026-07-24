@@ -499,6 +499,7 @@ index.html
 .about__btn-text {
   display: inline-block;
   transition: transform 0.3s ease;
+  will-change: transform; /* ホバー時の残像を消す */
 }
 
 .about__btn:hover .about__btn-text {
@@ -507,7 +508,8 @@ index.html
 
 .about__btn img {
   display: block;
-  width: 164px;
+  width: 165px; /* SVGのwidth属性と合わせる */
+  height: 8px; /* SVGのheight属性と合わせる */
   margin-top: 8px;
 }
 
