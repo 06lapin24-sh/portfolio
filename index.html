@@ -484,6 +484,19 @@
         setTimeout(function () {
           document.querySelector(".text-loader").classList.add("is-hidden");
           document.querySelector(".main-visual").classList.add("is-visible");
+          if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              const headerHeight =
+                document.getElementById("header").offsetHeight;
+              const targetTop =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                20;
+              window.scrollTo({ top: targetTop, behavior: "auto" });
+            }
+          }
         }, remaining);
       });
     </script>
@@ -552,6 +565,22 @@
 
         // Slick初期化後にAOSの位置を再計算
         AOS.refresh();
+        // Slick初期化後にも位置を再調整(画像読み込みで高さが変わるケア)
+        if (window.location.hash) {
+          setTimeout(function () {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              const headerHeight =
+                document.getElementById("header").offsetHeight;
+              const targetTop =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                20;
+              window.scrollTo({ top: targetTop, behavior: "auto" });
+            }
+          }, 300); // スライダーの初期化・画像読み込みを少し待つ
+        }
       });
     </script>
 
