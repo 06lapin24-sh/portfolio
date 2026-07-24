@@ -501,6 +501,12 @@
           $(".hamburger").toggleClass("open");
           $(".header__nav-sp").fadeToggle();
         });
+
+        //メニュー内のリンクをタップしたら閉じる
+        $(".header__nav-sp a").click(function () {
+          $(".hamburger").removeClass("open");
+          $(".header__nav-sp").fadeOut();
+        });
       });
     </script>
 
