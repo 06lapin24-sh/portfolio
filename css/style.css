@@ -465,10 +465,6 @@ index.html
   margin-top: 112px;
 }
 
-.about__box01 div {
-  width: 50%;
-}
-
 .h3__sub {
   margin-bottom: 14px;
   font-size: 14px;
@@ -488,8 +484,12 @@ index.html
   margin-bottom: 64px;
 }
 
-.about__btn {
+.about__btn-outer {
   display: flex;
+  margin-left: auto;
+}
+
+.about__btn {
   margin-left: auto;
 }
 
@@ -592,6 +592,7 @@ index.html
 }
 
 .btn__primary {
+  box-sizing: border-box; /* paddingとborderが内側に含まれる */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -604,7 +605,6 @@ index.html
   color: var(--base-color);
   background: var(--accent-color);
   transition: 0.3s;
-  cursor: pointer; /* buttonはデフォルトでcursor: pointerだが明示しておくと安心 */
 }
 
 .btn__primary .btn__text {
@@ -1181,6 +1181,7 @@ dd {
 }
 
 .btn__secondary {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
