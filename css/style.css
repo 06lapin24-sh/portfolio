@@ -19,7 +19,7 @@ HTML CSS JSResult Skip Results Iframe EDIT ON body {
   height: 10px;
   margin: -10px 0 0 -10px;
   z-index: 9999;
-  pointer-events: none;
+  pointer-events: none; /* マウス操作を無効化 */
   opacity: 0;
   transition:
     transform 0.3s ease,
@@ -77,6 +77,7 @@ h2::first-letter {
 
 /* ------- heading-arch(見出しをアーチで囲む) ------- */
 
+/* 見出しを中央配置 */
 .heading-arch,
 .heading-arch__banner {
   position: relative;
@@ -88,6 +89,7 @@ h2::first-letter {
   justify-content: center;
 }
 
+/* アーチを見出しの背面に配置 */
 .heading-arch__bg {
   position: absolute;
   top: 50%;
@@ -98,12 +100,14 @@ h2::first-letter {
   z-index: 0;
 }
 
+/* SVGを横幅いっぱいに表示 */
 .heading-arch__bg svg {
   display: block;
   width: 100%;
   height: auto;
 }
 
+/* 見出しをアーチより前面に表示 */
 .heading-arch h2,
 .heading-arch__banner h2 {
   position: relative;
@@ -111,24 +115,28 @@ h2::first-letter {
   margin: 0; /* 元のh2のmarginは親.heading-arch(__banner)の余白で調整 */
 }
 
+/* アニメーションの初期設定 */
 .heading-arch__grey,
 .heading-arch__blue {
-  stroke-opacity: 1; /* 薄さはお好みで0.2〜0.5に調整 */
-  stroke-dasharray: 1;
+  stroke-opacity: 1;
+  stroke-dasharray: 1; /* 線の長さを設定 */
 }
 
+/* グレーのアーチを描画 */
 .heading-arch__grey {
-  stroke-dashoffset: -1;
+  stroke-dashoffset: -1; /* 線を左側へ隠す */
   animation: drawGrey 1.2s ease-out 0s 1 forwards;
   animation-play-state: paused; /* スクロールで見えるまで再生しない */
 }
 
+/* ブルーのアーチを描画 */
 .heading-arch__blue {
-  stroke-dashoffset: 1;
+  stroke-dashoffset: 1; /* 線を右側へ隠す */
   animation: drawBlue 1.2s ease-out 1s 1 forwards;
   animation-play-state: paused;
 }
 
+/* アニメーションを開始 */
 .heading-arch.is-animate .heading-arch__grey,
 .heading-arch.is-animate .heading-arch__blue,
 .heading-arch__banner.is-animate .heading-arch__grey,
@@ -136,6 +144,7 @@ h2::first-letter {
   animation-play-state: running;
 }
 
+/* モーションを軽減 */
 @media (prefers-reduced-motion: reduce) {
   .heading-arch__grey,
   .heading-arch__blue {
@@ -145,6 +154,8 @@ h2::first-letter {
 }
 
 /* ここまでheading-arch */
+
+/* SVGの線を一度見えない位置へずらし、stroke-dashoffsetを0まで動かすことで、線が描かれるようなアニメーションを実装 */
 
 /* ------- header ------- */
 #header {
@@ -246,9 +257,9 @@ index.html
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: currentColor;
+  background-color: currentColor; /* 現在の文字色を使用 */
   margin-left: 3px;
-  animation: text-dot 2.8s infinite;
+  animation: text-dot 2.8s infinite; /* アニメーションを繰り返す */
 }
 
 @keyframes text-dot {
@@ -302,6 +313,7 @@ index.html
 .loader-arch-grey {
   stroke-dashoffset: -1;
   animation: drawGrey 1.2s ease-out 0.3s 1 forwards;
+  /* forwards アニメーション終了後の状態を保持 */
 }
 
 .loader-arch-blue {
@@ -839,19 +851,16 @@ svg {
   height: auto;
 }
 
-/* グレーのアーチ：左から先に出現 */
 .arch-grey {
   stroke-dasharray: 1;
-  stroke-dashoffset: -1; /* パスは右→左方向に定義されているため、
-                               負のオフセットで逆方向（左から右へ）に描画させる */
+  stroke-dashoffset: -1;
   animation: drawGrey 1.2s ease-out 0s 1 forwards;
   animation-play-state: paused; /* ← 追加：見えるまで再生しない */
 }
 
-/* 青のアーチ：後から右から出現 */
 .arch-blue {
   stroke-dasharray: 1;
-  stroke-dashoffset: 1; /* パスの定義方向どおり、右から左へ描画 */
+  stroke-dashoffset: 1;
   animation: drawBlue 1.2s ease-out 1s 1 forwards;
   animation-play-state: paused;
 }
@@ -1001,7 +1010,7 @@ works.html
 }
 
 .menu__list {
-  position: sticky;
+  position: sticky; /* スクロール時に位置を固定 */
   top: 400px;
   align-self: flex-start;
   display: flex;
@@ -1075,7 +1084,7 @@ works.html
   font-family: "Lato", sans-serif;
   font-size: 64px;
   font-weight: 300;
-  writing-mode: vertical-lr;
+  writing-mode: vertical-lr; /* 縦書き */
   line-height: 1;
   flex-shrink: 0;
 }
@@ -1243,7 +1252,7 @@ dd {
   border: solid 10px #f2f2f2;
   aspect-ratio: 270 / 700;
   width: 29vw;
-  overflow-y: scroll; /* スクロールは親(div)に指定 */
+  overflow-y: scroll;
 }
 
 .scroll__pc,
@@ -1280,7 +1289,7 @@ dd {
   max-width: 69%;
   height: 500px;
   margin: 0 auto 120px;
-  object-fit: contain;
+  object-fit: contain; /* 画像全体を枠内に表示 */
 }
 
 /* ここまでbanner */
@@ -1405,7 +1414,6 @@ SP
 
   footer {
     height: 203px;
-    /* background-image: url(../images/footer_sp.svg); */
   }
 
   .footer__nav ul {
@@ -1565,7 +1573,7 @@ SP
 
   #contact {
     margin: 0 auto 88px;
-    scroll-margin-top: 76px; /* スマホの実際のヘッダー高さ+余白に合わせて調整 */
+    scroll-margin-top: 76px;
   }
 
   .contact__content p {
@@ -1861,12 +1869,6 @@ SP
     line-height: 1.75;
   }
 
-  /*  
-  .works__item:last-of-type {
-    padding: 24px 0 0;
-  }
-*/
-
   .btn__secondary {
     margin: 0 auto 88px;
   }
@@ -1896,7 +1898,7 @@ SP
 
   /* アコーディオン */
 
-  /* 外枠(ボタン+中身)をこちらで一体化して囲む */
+  /* 外枠(ボタン+中身)を一体化して囲む */
   .accordion__pc-wrap,
   .accordion__sp-wrap {
     border: 1px solid var(--accent-color);

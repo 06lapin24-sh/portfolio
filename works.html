@@ -6,13 +6,14 @@
     <title>BRIDGE design | portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/reset.css" />
+    <!-- jQuery  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -97,7 +98,7 @@
             alt="LIFE hair designモックアップ"
           /></a>
           <p>美容室のLP</p>
-         <a class="mockup__link"  href ="design-cafe.html"><img
+          <a class="mockup__link"  href ="design-cafe.html"><img
             src="./images/mockup_pc_design-cafe.jpg"
             alt="DESIGN CAFEモックアップ"
           /></a>
@@ -112,7 +113,7 @@
                 alt="ハンバーガーモックアップ"
               /></a>
               <p>ハンバーガーのバナー「高級ver.」</p>
-             <a class="mockup__link"  href="./hamberger-pop.html"><img
+              <a class="mockup__link"  href="./hamberger-pop.html"><img
                   src="./images/mockup_banner_hamberger-pop.jpg"
                   alt="ハンバーガーモックアップ"
                 /></a>
@@ -127,8 +128,8 @@
                 alt="デザスタmobileモックアップ"
               /></a>
               <p>携帯ショップのバナー</p>
-         </ul>
-         <ul class="works__list">
+          </ul>
+          <ul class="works__list">
             <h3 id="menu-item-logo" class="menu__title">logo / ロゴ</h3>
             <a class="mockup__link"  href="./bridge-design_logo.html"><img
               src="./images/mockup_logo_bridge-design.jpg"
@@ -138,7 +139,7 @@
           </ul>
           <ul class="works__list">
             <h3 id="menu-item-others" class="menu__title">others / その他</h3>
-           <a class="mockup__link"  href="./others.html"><img src="./images/mockup_blank.jpg" alt="Coming soon" /></a>
+            <a class="mockup__link"  href="./others.html"><img src="./images/mockup_blank.jpg" alt="Coming soon" /></a>
           </ul>
         </div>
         <div class="works__h1">BRIDGE design</div>
@@ -156,21 +157,5 @@
       </nav>
       <p class="copy">©︎ BRIDGE design</p>
     </footer>
-
-        <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-
-    <script src="./js/main.js"></script>
-    
-    <!-- ハンバーガーメニュー -->
-    <script>
-      $(function () {
-        $(".hamburger").click(function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
-        });
-      });
-    </script>
-
   </body>
 </html>

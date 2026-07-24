@@ -7,8 +7,6 @@
     <link rel="icon" href="./images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap"
       rel="stylesheet"
@@ -22,6 +20,11 @@
     <!-- fade-inのCDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jQuery  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -474,16 +477,22 @@
 
     <!-- loading -->
     <script>
+      // ローディングの最小表示時間（3秒）
       const MIN_DISPLAY_TIME = 3000;
       const startTime = Date.now();
 
+      // ページの読み込み完了後
       window.addEventListener("load", function () {
+        // ローディング時間を調整
         const elapsed = Date.now() - startTime;
         const remaining = Math.max(MIN_DISPLAY_TIME - elapsed, 0);
 
         setTimeout(function () {
+          // ローディングを非表示にしてメインビジュアルを表示
           document.querySelector(".text-loader").classList.add("is-hidden");
           document.querySelector(".main-visual").classList.add("is-visible");
+
+          // ハッシュリンク（#aboutなど）の位置をヘッダー分調整
           if (window.location.hash) {
             const target = document.querySelector(window.location.hash);
             if (target) {
@@ -494,32 +503,11 @@
                 window.scrollY -
                 headerHeight -
                 20;
+
               window.scrollTo({ top: targetTop, behavior: "auto" });
             }
           }
         }, remaining);
-      });
-    </script>
-
-    <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <script src="./js/main.js"></script>
-
-    <!-- ハンバーガーメニュー -->
-    <script>
-      $(function () {
-        $(".hamburger").click(function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
-        });
-
-        //メニュー内のリンクをタップしたら閉じる
-        $(".header__nav-sp a").click(function () {
-          $(".hamburger").removeClass("open");
-          $(".header__nav-sp").fadeOut();
-        });
       });
     </script>
 
@@ -585,6 +573,7 @@
     </script>
 
     <script>
+      // 読み込み完了後にAOSを更新
       window.addEventListener("load", function () {
         AOS.refresh();
       });

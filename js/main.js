@@ -1,39 +1,80 @@
 "use strict";
 
-//カーソルの見た目を変える
-$(function(){
-  
-  //カーソル要素の指定
-  var cursor=$("#cursor");
-  
-  //mousemoveイベントでカーソル要素を移動させる
-  $(document).on("mousemove",function(e){
-    //カーソルの座標位置を取得
-    var x=e.clientX;
-    var y=e.clientY;
-    //カーソル要素のcssを書き換える用
+// カスタムカーソル
+$(function () {
+  // カーソル要素を取得
+  const cursor = $("#cursor");
+
+  // マウスに合わせてカーソルを移動
+  $(document).on("mousemove", function (e) {
     cursor.css({
-      "opacity":"1",
-      "top":y+"px",
-      "left":x+"px"
+      opacity: 1,
+      top: `${e.clientY}px`,
+      left: `${e.clientX}px`,
     });
   });
-});
 
-$(function () {
-  var cursor = $("#cursor");
-
-  // 大きくしたい要素をまとめて指定
-  var hoverTargets = "a, button, .link, .btn__primary, .btn__secondary";
-
-  $(document).on("mouseenter", hoverTargets, function () {
+  // リンク・ボタンに重なったら拡大
+  $(document).on("mouseenter", "a, button", function () {
     cursor.addClass("is-hover");
   });
 
-  $(document).on("mouseleave", hoverTargets, function () {
+  // 離れたら元の大きさに戻す
+  $(document).on("mouseleave", "a, button", function () {
     cursor.removeClass("is-hover");
   });
 });
+
+
+//ハンバーガーメニュー
+$(function () {
+  $(".hamburger").click(function () {
+    $(".hamburger").toggleClass("open");
+    $(".header__nav-sp").fadeToggle();
+  });
+
+  //メニュー内のリンクをタップしたら閉じる
+  $(".header__nav-sp a").click(function () {
+    $(".hamburger").removeClass("open");
+    $(".header__nav-sp").fadeOut();
+  });
+});
+
+
+//slick
+$(function () {
+  $(".works__slider02").slick({
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    dots: true,
+  });
+});
+
+
+// アーチのアニメーション
+const archWraps = document.querySelectorAll(
+  ".arch-wrap, .heading-arch, .heading-arch__banner"
+);
+
+const archObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      // 画面内に入ったらアニメーションを開始
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-animate");
+        archObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.8,
+  }
+);
+
+// 対象要素を監視
+archWraps.forEach((wrap) => archObserver.observe(wrap));
+
 
 
 // アコーディオンボタンを全て取得
@@ -78,46 +119,32 @@ mq.addEventListener("change", () => {
 });
 
 
-// 別ページからハッシュ付きで遷移してきた場合、画像読込完了後に位置を再調整
+// 別ページからハッシュ付きで移動したとき、読み込み後に位置を調整
 window.addEventListener("load", function () {
   if (location.hash) {
     const target = document.querySelector(location.hash);
+
     if (target) {
+      // ヘッダーの高さを取得
       const header = document.querySelector("#header");
       const headerHeight = header ? header.offsetHeight : 0;
 
-      // 一瞬 scroll-behavior を無効化して、ズレをリセット
+      // スムーススクロールを一時的に無効化
       const html = document.documentElement;
       const prevBehavior = html.style.scrollBehavior;
       html.style.scrollBehavior = "auto";
 
+      // ヘッダーに隠れない位置まで移動
       const targetPosition =
-        target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        20;
 
       window.scrollTo(0, targetPosition);
 
-      // 元に戻す
+      // スクロール設定を元に戻す
       html.style.scrollBehavior = prevBehavior;
     }
   }
 });
-
-
-//about.html アーチのアニメーション
-const archWraps = document.querySelectorAll(
-  ".arch-wrap, .heading-arch, .heading-arch__banner" 
-);
-
-const archObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-animate");
-        archObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.8 }
-);
-
-archWraps.forEach((wrap) => archObserver.observe(wrap));

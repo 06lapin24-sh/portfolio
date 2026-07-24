@@ -6,8 +6,6 @@
     <title>BRIDGE design | portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -22,6 +20,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
     />
+    <!-- jQuery  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -56,7 +59,7 @@
     <!-- ここまでheader -->
 
     <main class="works__detail-main">
-    <div class="heading-arch">
+      <div class="heading-arch">
         <div class="heading-arch__bg" aria-hidden="true">
           <svg
             width="1440"
@@ -83,8 +86,8 @@
             />
           </svg>
         </div>
-      <h2 class="works__heading">Works</h2>
-    </div>
+        <h2 class="works__heading">Works</h2>
+      </div>
       <div class="works__slider02">
         <img src="./images/mockup_pc_design-cafe.jpg" alt="DESIGN CAFE PC版" />
         <img
@@ -93,9 +96,7 @@
         />
       </div>
       <div class="works__wrapper">
-        <h3 class="works__h3">
-          カフェのWebサイト（架空サイト）
-        </h3>
+        <h3 class="works__h3">カフェのWebサイト（架空サイト）</h3>
         <div class="works__list">
           <dl class="works__item">
             <dt>概要</dt>
@@ -201,33 +202,5 @@
       </nav>
       <p class="copy">©︎ BRIDGE design</p>
     </footer>
-
-    <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-
-    <script src="./js/main.js"></script>
-
-    <!-- ハンバーガーメニュー -->
-    <script>
-      $(function () {
-        $(".hamburger").click(function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
-        });
-      });
-    </script>
-
-    <!-- slick -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-      $(function () {
-        $(".works__slider02").slick({
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          dots: true,
-        });
-      });
-    </script>
-
+  </body>
 </html>

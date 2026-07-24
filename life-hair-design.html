@@ -6,8 +6,6 @@
     <title>BRIDGE design | portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -22,6 +20,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
     />
+    <!-- jQuery  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="./js/main.js" defer></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -192,33 +195,5 @@
       </nav>
       <p class="copy">©︎ BRIDGE design</p>
     </footer>
-
-    <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-
-    <script src="./js/main.js"></script>
-
-    <!-- ハンバーガーメニュー -->
-    <script>
-      $(function () {
-        $(".hamburger").click(function () {
-          $(".hamburger").toggleClass("open");
-          $(".header__nav-sp").fadeToggle();
-        });
-      });
-    </script>
-
-    <!-- slickのJavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-      $(function () {
-        $(".works__slider02").slick({
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 3000,
-          dots: true,
-        });
-      });
-    </script>
   </body>
 </html>
